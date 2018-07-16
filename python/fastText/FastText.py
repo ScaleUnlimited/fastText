@@ -50,6 +50,13 @@ class _FastText():
         b = fasttext.Vector(dim)
         self.f.getWordVector(b, word)
         return np.array(b)
+        
+    def get_subword_vector(self, word):
+        """Get the vector representation of subword."""
+        dim = self.get_dimension()
+        b = fasttext.Vector(dim)
+        self.f.getSubwordVector(b, word)
+        return np.array(b)
 
     def get_sentence_vector(self, text):
         """
